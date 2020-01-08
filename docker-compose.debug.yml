@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  lottery:
+    image: lottery
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 12345:12345

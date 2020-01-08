@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  node:
+    image: node
+    working_dir: /data/web/wwwroot/html
+    volumes:
+      - ./:/data/web
+    command: "npm i"
+  go:
+    image: lottery
+    working_dir: /go/lottery
+    build:
+        context: .
+        dockerfile: go.dockerfile
+        # args:
+        #   MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+        #   MYSQL_USER: ${DB_USER}
+    volumes:
+      - ./:/go/lottery
+    # environment:
+    #   devTarget: "http://api-svr:${PORT}"
+    ports:
+      - "12345:12345"
+    command: "go run lottery.go"
