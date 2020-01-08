@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "start": "node-sass -w style -o style"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "node-sass": "^4.10.0",
+    "normalize.css": "^7.0.0",
+    "odometer": "^0.4.8"
+  }
+}
